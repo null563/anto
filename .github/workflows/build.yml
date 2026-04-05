@@ -17,9 +17,9 @@ jobs:
       - name: Build
         run: |
           if [ "${{ matrix.os }}" == "windows" ]; then
-            GOOS=windows GOARCH=amd64 go build -o myapp.exe
+            GOOS=windows GOARCH=amd64 go build -o anto.exe ./cmd/...
           else
-            GOOS=linux GOARCH=amd64 go build -o myapp
+            GOOS=linux GOARCH=amd64 go build -o anto ./cmd/...
           fi
       - uses: actions/upload-artifact@v4
         with:
